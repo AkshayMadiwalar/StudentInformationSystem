@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+        <div class="jumbotron text-center">
+                <h2/>Welcome ADMIN
+                <h4 class="lead">Platform for admins to view and update the student records</h4>   	
+		<div class="container">
+		<form method="POST" action="/upload" enctype="multipart/form-data">
+		<div class="form-group">
+		  <label for="inputFile" style="text-align: center;
+  font-size: 18px;
+ cursor: pointer; display:block;padding:7px ; border:2px;background-color: #f4511e;width:150px;color:white; margin:auto;">Upload File </label>
+		  <input style="text-align: center;
+
+ display:block; padding:5px 1px; margin:auto;margin-left:400px;" type="file" id="inputFile" name="inputFile"/>
+		</div>
+		<button type="submit" class="btn" style="padding:2px; border:5px solid blue;font-size: 25px; background-color:white;padding:10px 20px;text-size:2em;border-radius:5px; color:black;" >Submit</button>
+		</form>
+	</div>
+
+        </div>
+	<div class="jumbotron text-center">
+		<h2 style="background-color:black; display:block; padding:7px;"/>Semesters
+        <ul class="list-group" style="background-color:#465346; ">
+        {% for semester in semesters %}
+                <li class="list-group-item" style="background-color:#465346; color:#ffffb3; border:none; border-bottom:white 1px solid;"> <a href="/semester/{{semester.id}}" style="color:white; font-size:100%;"> {{ semester.title}} </a></li>
+
+        {% endfor %}
+        </ul>
+
+
+	</div>
+{% endblock %}
+

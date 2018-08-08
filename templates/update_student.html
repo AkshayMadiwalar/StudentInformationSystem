@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+        <h1>Update Student</h1>
+        {% from 'includes/_formhelper.html' import render_field %}
+        <form action="" method="POST">
+                <div class="form-group">
+                   {{ render_field(form.name, class_="form-control") }}
+                </div>
+                <div class="form-group">
+                   {{ render_field(form.usn, class_="form-control") }}
+                </div>
+		 <div class="form-group">
+                   {{ render_field(form.atnd, class_="form-control") }}
+                </div>
+
+		<div class="form-group">
+                   {{ render_field(form.cie1, class_="form-control") }}
+                </div>
+		<div class="form-group">
+                   {{ render_field(form.cie2, class_="form-control") }}
+                </div>
+		<div class="form-group">
+                   {{ render_field(form.cie3, class_="form-control") }}
+                </div>
+		<div class="form-group">
+                   {{ render_field(form.totalscore, class_="form-control") }}
+                </div>
+
+                <p><input class="btn btn-primary" type="submit" value="Submit">  
+        </form>
+{% endblock %}
+
+

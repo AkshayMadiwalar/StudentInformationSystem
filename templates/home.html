@@ -1,0 +1,11 @@
+{%	 extends 'layout.html' %}
+
+{% block body %}
+	<div class="jumbotron text-center" style="background-color:#565; color:#fff;">
+		<h1>Student Information System</h1>
+		<p class="lead">Platform to know your CIE marks and Attendance</p>		{% if session.logged_in == NULL %}
+			<a href="/register" class="btn btn-primary btn-lg">Register</a>
+			<a href="/login" class="btn btn-success btn-lg">Login</a>
+		{% endif %}
+	</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+        <h1>Documents</h1>
+        <div>
+	  <table class="table">
+		{% for file in files %}
+                   <tr>
+			<td>{{file.name}}</td>
+			<td><a href="{{ url_for('download',name=file.name)}}">Download</a></td>
+		   </tr>	
+        	{% endfor %}
+	  </table>
+        </div>
+{% endblock %}
+

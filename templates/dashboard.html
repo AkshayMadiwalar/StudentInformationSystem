@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+	<h1>Dashboard <small> Welcome {{ session.username }}</small></h1>
+	<a class="btn btn-success" href="/add_article">Feedback</a>
+	{% if not record %}
+	<a class="btn btn-success pull-right" href="/register_sis">New to SIS?</a>
+	{% endif %}
+
+	{% if record %}
+	<div class="jumbotron text-center">
+		<h3>{{record.name}}</h3>
+		<h4>{{record.usn}}</h4>
+	</div>
+	<table class="table table-striped">
+		<tr>
+		   <th>Course</th>
+		   <th>Attendance</th>
+		   <th>CIE1</th>
+		   <th>CIE2</th>
+		   <th>CIE3</th>
+		   <th>Score</th>
+		</tr>
+		   <tr>
+			<td>Operating Systems</td>
+			<td>{{ record.os_atnd }}</td>
+			<td>{{ record.os_cie1 }} </td>
+			<td>{{ record.os_cie2 }}</td>
+			<td>{{ record.os_cie3 }}</td>
+			<td>{{ record.os_totalscore }}</td>
+		  </tr>
+		
+		  <tr>
+			<td>Computer Networks</td>
+                        <td>{{ record.cn_atnd }}</td>
+                        <td>{{ record.cn_cie1 }} </td>
+                        <td>{{ record.cn_cie2 }}</td>
+                        <td>{{ record.cn_cie3 }}</td>
+                        <td>{{ record.cn_totalscore }}</td>
+		  </tr>
+
+		  <tr>
+                        <td>Java Programming</td>
+                        <td>{{ record.java_atnd }}</td>
+                        <td>{{ record.java_cie1 }} </td>
+                        <td>{{ record.java_cie2 }}</td>
+                        <td>{{ record.java_cie3 }}</td>
+                        <td>{{ record.java_totalscore }}</td>
+                  </tr>
+
+
+		  <tr>
+                        <td>Database Management System</td>
+                        <td>{{ record.dbms_atnd }}</td>
+                        <td>{{ record.dbms_cie1 }} </td>
+                        <td>{{ record.dbms_cie2 }}</td>
+                        <td>{{ record.dbms_cie3 }}</td>
+                        <td>{{ record.dbms_totalscore }}</td>
+                  </tr>
+
+		  <tr>
+                        <td>Artificial Intelligence</td>
+                        <td>{{ record.ai_atnd }}</td>
+                        <td>{{ record.ai_cie1 }} </td>
+                        <td>{{ record.ai_cie2 }}</td>
+                        <td>{{ record.ai_cie3 }}</td>
+                        <td>{{ record.ai_totalscore }}</td>
+                  </tr>
+
+	</table>
+    
+        <div style="width:100%; margin:auto; text-align:center;">
+	<a class="btn btn-primary"  href="/file_contents">Downloads</a>
+	</div>
+ 
+	{% endif %}
+				
+{% endblock %}

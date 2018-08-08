@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+        <h1>Courses</h1>
+        <ul class="list-group">	
+        {% for course in courses %}
+	   {% if  course.sem == id|int()  %} 
+                <li class="list-group-item"> <a href=" {{ url_for('course', id  = course.id)}} "> {{ course.title}} </a></li>
+	   {% endif %}
+
+        {% endfor %}
+        </ul>
+{% endblock %}
+

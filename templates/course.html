@@ -1,0 +1,69 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+        <h1> Students </h1>
+        <div>
+	  <table class="table table-striped">
+                <tr>
+                   <th>Name</th>
+                   <th>USN</th>
+                   <th>Attendance</th>
+                   <th>CIE 1</th>
+                   <th>CIE 2</th>
+                   <th>CIE 3</th>
+		   <th>TOTAL</th>
+                </tr>
+                {% for student in students %}
+                   <tr>
+			{% if id|int() == 1 %}
+                        	<td>{{ student.name }}</td>
+                        	<td>{{ student.usn }}</td>
+                        	<td>{{ student.os_atnd }} </td>
+                        	<td>{{ student.os_cie1 }}</td>
+				<td>{{ student.os_cie2 }}</td>
+				<td>{{ student.os_cie3 }}</td>
+				<td>{{ student.os_totalscore }}</td>
+			{% elif id|int() == 2 %}
+				<td>{{ student.name }}</td>
+                                <td>{{ student.usn }}</td>
+                                <td>{{ student.cn_atnd }} </td>
+                                <td>{{ student.cn_cie1 }}</td>
+                                <td>{{ student.cn_cie2 }}</td>
+                                <td>{{ student.cn_cie3 }}</td>
+                                <td>{{ student.cn_totalscore }}</td>
+			{% elif id|int() == 3 %}
+                                <td>{{ student.name }}</td>
+                                <td>{{ student.usn }}</td>
+                                <td>{{ student.java_atnd }} </td>
+                                <td>{{ student.java_cie1 }}</td>
+                                <td>{{ student.java_cie2 }}</td>
+                                <td>{{ student.java_cie3 }}</td>
+                                <td>{{ student.java_totalscore }}</td>
+			{% elif id|int() == 4 %}
+                                <td>{{ student.name }}</td>
+                                <td>{{ student.usn }}</td>
+                                <td>{{ student.dbms_atnd }} </td>
+                                <td>{{ student.dbms_cie1 }}</td>
+                                <td>{{ student.dbms_cie2 }}</td>
+                                <td>{{ student.dbms_cie3 }}</td>
+                                <td>{{ student.dbms_totalscore }}</td>
+			{% elif id|int() == 5 %}
+                                <td>{{ student.name }}</td>
+                                <td>{{ student.usn }}</td>
+                                <td>{{ student.ai_atnd }} </td>
+                                <td>{{ student.ai_cie1 }}</td>
+                                <td>{{ student.ai_cie2 }}</td>
+                                <td>{{ student.ai_cie3 }}</td>
+                                <td>{{ student.ai_totalscore }}</td>
+			{% endif %}
+
+			<td><a href="/update_student/{{id}}/{{student.usn}}" class="btn btn-default pull-right">Update</a></td>
+               
+                   </tr>
+                {% endfor %}
+        </table>
+
+
+        </div>
+{% endblock %}
+i
